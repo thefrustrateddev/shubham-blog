@@ -14,6 +14,10 @@
 This is blog website built on vue 3 which supports unit+e2e testing.
 It incorporates usage of both options API and Composition API[Vue SFC has also been incorporated]
 
+JEST has been used for unit test cases.
+
+Cypress has been used for end to end test cases.
+
 ## Project workflow
 
 This Projects consists of 2 routes:
@@ -25,42 +29,39 @@ The Home page incorporates pagination and gives user ability to select categorie
 
 ## Local Installtion
 
-_***NOTE: For application to work as expected please use the current deployed contract as the moralis cloud functions and the sync event is connected to the currently deployed contract on rinkeby test net._
-
-
+The project is built on vue 3 and using niode version 14.
 
 Clone this repository and follow the steps mentioned below.
 
+If using NVM[ to shift to node 14 ]
 ```
-The project is also available on the following github url
-
-   Ecommerce application          :   https://fictional-dollop-ca9c20ca.pages.github.io/vendor
-   Report submission application  :   https://fictional-dollop-ca9c20ca.pages.github.io/expense
-   
-```
-   
-   
-### Install Truffle
-
-```
-$ npm install -g truffle
-```
-*Note: To avoid any strange permissions errors, we recommend using [nvm](https://github.com/nvm-sh/nvm).*
-
-### Install other dependancies
-
-```
-$ npm install
+nvm use 14
 ```
 
-### Building UI
+To Install the dependencies
+```
+npm install
+```
 
-Please refer to :
+To compile and hot-reload for development
+```
+npm run serve
+```
 
-   Ecommerce application          :   [commerce-client README](/commerce-client/README.md)
-   
-   Report submission application  :   [client README](/client/README.md)
+To compile and minify for production
+```
+npm run build
+```
 
+To run e2e test cases
+```
+npm run test:e2e
+```
+
+To run unit test cases
+```
+npm run test:unit
+```
 
 ### Environment Variables
 
@@ -75,60 +76,14 @@ MATIC_PROJECT_ID=
 INFURA_PROJECT_ID=
 ```
 
-### Local Migration
-
-**Migrated contracts** are already **saved** in the respective client and commerce client folders which relates to the _ecommerce application_ and _expense report application_ respectively.
-
-In case you want to do a fresh migration on a different network or run it on your local ganache instance please use the following command
-
-```
-$ $NETWORK=rinkeby npm run migrate
-```
-
-List of valid values for $NETWORK are:
-
-+  `ganache_local` : local ganache server
-    +   Required env variables are :
-        +   PROVIDER_URL
-        +   MNEMONIC
-    
-+  `mumbai` : uses matic to create contracts on polygon mumbai test net
-    +   Required env variables are :
-        +   MATIC_PROJECT_ID
-        +   MNEMONIC
-
-+  `rinkeby` : uses infura to create contracts on rinkeby test net
-    +   Required env variables are :
-        +   INFURA_PROJECT_ID
-        +   MNEMONIC
-
-+  `goerli` : uses infura to create contracts on goerli test net
-    +   Required env variables are :
-        +   INFURA_PROJECT_ID
-        +   MNEMONIC
-
-Currently the latest contracts are deployed on _rinkeby testnet_.
-
-## Demo Video
-https://user-images.githubusercontent.com/16405300/154923382-f11e52c3-6262-45db-9a2d-e4b8cabb0760.mov
-
 ## Misc
 
-### Deployed address and block explorer link
-
-Deployed contract's rinkeby address : 0x35B3391e8DE195336CbC89aA01aa228069Dbd477
-
-Please use this [link](https://rinkeby.etherscan.io/address/0x35B3391e8DE195336CbC89aA01aa228069Dbd477) to verify the transactions on [rinkeby etherscan](https://rinkeby.etherscan.io).
 
 ### Tools and Libraries used
-   +  Truffle
-   +  Moralis
-   +  Metamask
-   +  React
-   +  Vue
-   +  openzepplin/contracts
-   +  Infura [for rinkeby and goerli test net connection]
-   +  Matic [for polygon testnet connection]
+   +  Vue 3
+   +  Cypress
+   +  Prettier
+   +  Jest
 
 ### License
 
