@@ -1,18 +1,12 @@
 import { BlogService } from "@/services/blogs.service";
-
+import { filterCategories } from "@/utils";
+/**
+ * Initiliasing BlogService
+ */
 const blogService = new BlogService(
-  "https://public-api.wordpress.com/rest/v1.1/sites/",
-  "107403796"
+  process.env.VUE_APP_BLOG_BASE_URL,
+  process.env.VUE_APP_BLOG_SITE_ID
 );
-
-function filterCategories(categories) {
-  return categories.map((category) => {
-    return {
-      name: category.name,
-      slug: category.slug,
-    };
-  });
-}
 
 const state = {
   blogs: [],
@@ -24,6 +18,7 @@ const state = {
   selectedBlogSlug: "",
   selectedCategorySlug: "",
 };
+
 const getters = {
   getAllBlogs: (state) => state.blogs,
   getBlog: (state) => state.blog,

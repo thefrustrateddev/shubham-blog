@@ -6,7 +6,7 @@ export class BlogService extends BaseService {
   }
   async getBlogs(number = 20, pageNumber = 1, category) {
     let params = {
-      fields: "slug,categories,post_thumbnail,title,date",
+      fields: process.env.VUE_APP_BLOG_LIST_FIELDS,
       number,
       page: pageNumber,
     };
@@ -24,7 +24,7 @@ export class BlogService extends BaseService {
     const response = await this.getCall(
       "/posts",
       {
-        fields: "featured_image,title,author,content,date",
+        fields: process.env.VUE_APP_BLOG_FIELDS,
       },
       slug
     );

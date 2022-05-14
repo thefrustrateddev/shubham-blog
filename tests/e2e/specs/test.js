@@ -1,5 +1,3 @@
-// https://docs.cypress.io/api/table-of-contents
-
 describe("Home Page", () => {
   it("Visits the app root url", () => {
     cy.visit("/");

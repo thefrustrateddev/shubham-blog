@@ -1,13 +1,21 @@
 <template>
   <div class="header pl-15 pt-20 pb-20">
-    <router-link to="/" data-cy="logo">
-      <img class="logo" src="../assets/truecaller.svg" />
-    </router-link>
+    <img
+      data-cy="logo"
+      class="logo"
+      src="../assets/truecaller.svg"
+      @click="redirectToHomePage"
+    />
   </div>
 </template>
 <script>
 export default {
   name: "BlogHeader",
+};
+</script>
+<script setup>
+const redirectToHomePage = () => {
+  window.location.href = "/";
 };
 </script>
 <style lang="scss">

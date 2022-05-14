@@ -22,7 +22,7 @@ TN:
 SF:src/components/BlogBanner.vue
 FNF:0
 FNH:0
-DA:19,1
+DA:24,1
 LF:1
 LH:1
 BRF:0
@@ -32,7 +32,7 @@ TN:
 SF:src/components/BlogCard.vue
 FNF:0
 FNH:0
-DA:24,1
+DA:32,1
 LF:1
 LH:1
 BRF:0
@@ -52,7 +52,7 @@ TN:
 SF:src/layouts/BlogHeader.vue
 FNF:0
 FNH:0
-DA:9,1
+DA:12,1
 LF:1
 LH:1
 BRF:0

@@ -1,11 +1,8 @@
 <template>
   <div>
-    <div v-if="isDefault" class="hero-banner">
+    <div v-if="isDefault" class="hero-banner" ref="heroBanner">
       <div class="centered">{{ bannerText }}</div>
-      <div
-        class="bottom-centered"
-        @click="scrollToElement({ behavior: 'smooth' })"
-      >
+      <div class="bottom-centered" @click="scrollToBottom()">
         <i class="fa-solid fa-angle-down"></i>
       </div>
     </div>
@@ -16,13 +13,21 @@
 </template>
 
 <script>
+/**
+ * @Component BlogBanner
+ * This is component refers to the top banner bewing shown on the list page as well as the detail view
+ * @param isDefault: is true when banner being shown has a center text. Home page in this case
+ * @param isDefault: is false when banner being shown doesnt contain a center text
+ * @param bannerText: text to be shown on the image
+ * @param image: image to be shown on the top of the page
+ */
 export default {
   name: "BlogBanner",
   inheritAttrs: false,
 };
 </script>
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
 defineProps({
   image: {
     type: String,
@@ -40,13 +45,12 @@ defineProps({
     default: true,
   },
 });
+const heroBanner = ref(null);
 // eslint-disable-next-line no-unused-vars
-const scrollToElement = (options) => {
-  const el = this.$el.getElementsByClassName("post-list")[0];
-
-  if (el) {
-    el.scrollIntoView(options);
-  }
+const scrollToBottom = () => {
+  // scroll to start of latest-artciles
+  let element = document.querySelector(`#latest-articles`);
+  element.scrollIntoView({ behavior: "smooth" });
 };
 </script>
 

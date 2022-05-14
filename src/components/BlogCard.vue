@@ -21,6 +21,14 @@
 </template>
 
 <script>
+/**
+ * @Component Blogcard
+ * This is component refers to the blog cards in the list view
+ * @param cardImage
+ * @param cardCategory
+ * @param cardSlug: this is required to view the detail page
+ * @param cardPostedDate
+ */
 export default {
   name: "BlogCard",
   inheritAttrs: false,
@@ -59,34 +67,48 @@ let props = defineProps({
   },
 });
 
+/**
+ * initialised to route to detail page
+ */
 const router = useRouter();
 
 // eslint-disable-next-line no-unused-vars
 let modCardTitle = computed(() => {
+  /**
+   * Modifies the Card Title to show limited charrecter
+   */
   if (props.cardTitle.length > 26) {
     return `${props.cardTitle.substring(0, 26)}...`;
   }
   return props.cardTitle;
 });
+
 // eslint-disable-next-line no-unused-vars
 let modCardCategory = computed(() => {
+  /**
+   * Picks out the first category from the catrgory object being sent by the API
+   */
   let cardCategories = [];
   for (let category in toRaw(props.cardCategory)) {
     cardCategories.push(toRaw(props.cardCategory)[category]);
   }
-
   return cardCategories[0];
 });
 
 // eslint-disable-next-line no-unused-vars
 let modCardDate = computed(() => {
+  /**
+   * Modifies the date as per the design
+   */
   return timeSince(
     new Date(Date.now() - new Date(props.cardPostedDate).getTime())
   );
 });
 
 const routeToBlog = async () => {
-  console.log({ a: props.cardSlug });
+  /**
+   * Routes to the detail view of the Blog
+   */
   router.push({
     name: "blog",
     params: {

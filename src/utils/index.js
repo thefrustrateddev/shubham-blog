@@ -1,3 +1,10 @@
+/**
+ * Basic utilities being used across the project
+ */
+/**
+ * @param  {} date
+ * @returns string: 16 Hours ago
+ */
 export const timeSince = (date) => {
   var seconds = Math.floor(date / 1000);
   var interval = seconds / 31536000;
@@ -22,4 +29,17 @@ export const timeSince = (date) => {
     return Math.floor(interval) + " minutes";
   }
   return Math.floor(seconds) + " seconds";
+};
+
+/**
+ * @param  {} categories
+ * @returns Object
+ */
+export const filterCategories = (categories) => {
+  return categories.map((category) => {
+    return {
+      name: category.name,
+      slug: category.slug,
+    };
+  });
 };

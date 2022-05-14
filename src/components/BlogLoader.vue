@@ -4,6 +4,10 @@
   </div>
 </template>
 <script>
+/**
+ * @Component BlogLoader
+ * Appears when API call is being made
+ */
 export default {
   name: "BlogLoader",
 };

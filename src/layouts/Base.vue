@@ -4,6 +4,13 @@
   <blog-footer></blog-footer>
 </template>
 <script>
+/**
+ * @Layout Blogcard
+ * Provides a base layout/skeleton for the pages
+ * router-view links to the views folder
+ * @component BlogHeader
+ * @component BlogFooter
+ */
 import BlogHeader from "./BlogHeader.vue";
 import BlogFooter from "./BlogFooter.vue";
 export default {

@@ -1,3 +1,7 @@
+/**
+ * Base Service Class
+ * Can contain Response/Error Wrapper for a bigger project
+ */
 export class BaseService {
   constructor(baseURL, siteId) {
     this.baseURL = baseURL;

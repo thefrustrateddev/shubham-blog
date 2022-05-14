@@ -30,12 +30,19 @@
 </template>
 
 <script>
+/**
+ * @View DetailView
+ * Route: /blog/${slug}
+ * Provides the detailed description of the blog
+ * @component BlogBanner
+ * @component BlogLoader
+ */
 import BlogBanner from "@/components/BlogBanner.vue";
 import BlogLoader from "@/components/BlogLoader.vue";
 
 import { mapActions, mapGetters } from "vuex";
 export default {
-  name: "HomeView",
+  name: "DetailView",
   components: {
     BlogBanner,
     BlogLoader,
@@ -43,7 +50,9 @@ export default {
   data: () => ({ isLoading: true }),
   async mounted() {
     this.isLoading = true;
+    // Fetching the slug from the route param
     const slug = this.$route.params.slug;
+    // Fetching the Blog data using the slug
     await this.fetchBlogBySlug(slug);
     this.isLoading = false;
   },
@@ -57,6 +66,9 @@ export default {
       blog: "getBlog",
     }),
     modDate() {
+      /**
+       * Modifies the date as per the req
+       */
       if (this.blog?.date) {
         return new Date(this.blog?.date).toLocaleDateString("en-us", {
           year: "numeric",
