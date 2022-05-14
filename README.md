@@ -1,49 +1,27 @@
 <img src="https://user-images.githubusercontent.com/16405300/154925743-1a508544-73ab-461b-81b4-c642d8d14b98.PNG" width="100" height="100"> 
 
-# NFT based Expense Reimbursement
+# Truecaller Blog
 
 ## Sections
 +   [Description](#description)
 +   [Project Worflow](#project-workflow)
-+   [Contract Metadata Structure](#contract-metadata-structure)
 +   [Local Installation](#local-installtion)
 +   [Demo Video](#demo-video)
 +   [Misc](#misc)
 
 ## Description
 
-This a quick expense reimbursement application which verifies the expense based on the NFT generated for the invoice.
-The invoice contains all the metadat of the product which helps in verification when the user enters the expense in the expense application.
+This is blog website built on vue 3 which supports unit+e2e testing.
+It incorporates usage of both options API and Composition API[Vue SFC has also been incorporated]
 
 ## Project workflow
 
-![photo_2022-02-21 15 11 10](https://user-images.githubusercontent.com/16405300/154928878-78bcd4ea-ade9-4815-ad46-9442709ded1c.jpeg)
-_This diagram explains the base project workflow._
+This Projects consists of 2 routes:
 
-## Contract metadata structure
+  + Blog List/ Home page
+  + Blog Detail View
 
-Below mentioned are the data stored in the NFT which helps in expense verification.
-
-```
-   struct Invoice {
-        address buyer;
-        address seller;
-        string date;
-        string currency;
-        uint amount;
-        string description;
-        string orderId;
-        Item item;
-    }
-
-    struct Item {
-        string sku;
-        uint quantity;
-        uint pricePerUnit;
-        string unit;
-        uint price;
-    }
-```
+The Home page incorporates pagination and gives user ability to select categories of blogs user wants to view.
 
 ## Local Installtion
 
