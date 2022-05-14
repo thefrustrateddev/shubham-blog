@@ -1,5 +1,3 @@
-<img src="https://user-images.githubusercontent.com/16405300/154925743-1a508544-73ab-461b-81b4-c642d8d14b98.PNG" width="100" height="100"> 
-
 # Truecaller Blog
 
 ## Sections
@@ -25,6 +23,8 @@ This Projects consists of 2 routes:
   + Blog Detail View
 
 The Home page incorporates pagination and gives user ability to select categories of blogs user wants to view.
+
+
 
 ## Local Installtion
 
@@ -83,6 +83,8 @@ INFURA_PROJECT_ID=
    +  Cypress
    +  Prettier
    +  Jest
+   +  FontAwesome
+   +  
 
 ### License
 
