@@ -24,6 +24,9 @@ This Projects consists of 2 routes:
 
 The Home page incorporates pagination and gives user ability to select categories of blogs user wants to view.
 
+Custom column has been created using mixin in the styles folder
+All the variables are stored in the styels folder
+
 
 
 ## Local Installtion
