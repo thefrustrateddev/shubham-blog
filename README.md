@@ -6,7 +6,6 @@
 +   [Description](#description)
 +   [Project Worflow](#project-workflow)
 +   [Local Installation](#local-installtion)
-+   [Demo Video](#demo-video)
 +   [Misc](#misc)
 
 ## Description
