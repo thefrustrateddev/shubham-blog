@@ -1,0 +1,70 @@
+html,
+body,
+#app {
+  min-height: 100vh;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+#app {
+  background-color: $color-body;
+  color: $color-black;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  vertical-align: top;
+}
+
+// * {
+//   box-sizing: border-box;
+// }
+
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.wrapper {
+  width: 100%;
+  min-width: 300px; // and paddind + 10 + 10
+
+  margin: 0 auto;
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  @include media_desktop {
+    max-width: 1200px;
+    // background: red;
+  }
+
+  @include small_media_desktop {
+    // background: yellow;
+    max-width: 1024px;
+  }
+
+  @include media_tablet {
+    // background: yellow;
+    max-width: 768px;
+  }
+
+  @include media_mobile {
+    max-width: 480px;
+  }
+}
+
+// routes transition animation
+.fade-enter-active {
+  transition: opacity 0.8s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}

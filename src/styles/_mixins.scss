@@ -1,0 +1,77 @@
+// @mixin create-cols($span) {
+//   .col--#{$span} {
+//     width: (($span/12) * 100%);
+//   }
+// }
+
+// .col {
+//   @include create-cols(1);
+//   @include create-cols(2);
+//   @include create-cols(3);
+//   @include create-cols(4);
+//   @include create-cols(5);
+//   @include create-cols(6);
+//   @include create-cols(7);
+//   @include create-cols(8);
+//   @include create-cols(9);
+//   @include create-cols(10);
+//   @include create-cols(11);
+//   @include create-cols(12);
+// }
+
+$unit: rem;
+$horz-spacing: 1;
+$vert-spacing: 1.75rem;
+$grid-gutter: $horz-spacing + $unit;
+$multiplier: $horz-spacing;
+$cols: 12;
+// Placeholder
+%flex-col {
+  min-width: min-content;
+  display: flex;
+}
+// Mixin
+@include media_desktop {
+  @for $i from 1 through $cols {
+    .col-#{$i} {
+      width: (($i/12) * 100%);
+      float: left;
+    }
+  }
+}
+@include small_media_desktop {
+  @for $i from 1 through $cols {
+    .col-lg-#{$i} {
+      width: (($i/12) * 100%);
+      float: left;
+    }
+  }
+}
+@include media_tablet {
+  @for $i from 1 through $cols {
+    .col-sm-#{$i} {
+      width: (($i/12) * 100%);
+      float: left;
+    }
+  }
+}
+@include media_mobile {
+  @for $i from 1 through $cols {
+    .col-xs-#{$i} {
+      width: (($i/12) * 100%);
+      float: left;
+    }
+  }
+}
+
+// Other stuff
+
+.main {
+  padding: 0 $grid-gutter;
+  margin: auto;
+}
+.row {
+  min-height: 10vh;
+  margin: $vert-spacing 0;
+  width: 100%;
+}
